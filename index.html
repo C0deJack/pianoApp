@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PIANO PWA</title>
+	<link rel="stylesheet" href="src/styles.css">
+	<script src="src/play.js" defer></script>
+</head>
+<body>
+<div>
+	<input type="checkbox">
+</div>
+	<div class="targetNoteHolder">
+		<div id="targetNote" data-key=""></div>
+	</div>
+	<section>
+		<div class="keys">
+			<div data-key="65" class="white key">
+				<div data-key="87" class="black key">
+					<div class="sound">W</div>
+					<div class="note">C#</div>
+				</div>
+				<div class="sound">A</div>
+				<div class="note">C</div>
+			</div>
+			<div data-key="83" class="white key">
+				<div data-key="69" class="black key">
+					<div class="sound">E</div>
+					<div class="note">D#</div>
+				</div>
+				<div class="sound">S</div>
+				<div class="note">D</div>
+			</div>
+			<div data-key="68" class="white key">
+				<div class="sound">D</div>
+				<div class="note">E</div>
+			</div>
+			<div data-key="70" class="white key">
+				<div data-key="84" class="black key">
+					<div class="sound">T</div>
+					<div class="note">F#</div>
+				</div>
+				<div class="sound">F</div>
+				<div class="note">F</div>
+			</div>
+			<div data-key="71" class="white key">
+				<div data-key="89" class="black key">
+					<div class="sound">Y</div>
+					<div class="note">G#</div>
+				</div>
+				<div class="sound">G</div>
+				<div class="note">G</div>
+			</div>
+			<div data-key="72" class="white key">
+				<div data-key="85" class="black key">
+					<div class="sound">U</div>
+					<div class="note">A#</div>
+				</div>
+				<div class="sound">H</div>
+				<div class="note">A</div>
+			</div>
+			<div data-key="74" class="white key">
+				<div class="sound">J</div>
+				<div class="note">B</div>
+			</div>
+		</div>
+	</section>
+
+	<audio data-key="65" src="sounds/c1.wav"></audio>
+	<audio data-key="87" src="sounds/c1s.wav"></audio>
+	<audio data-key="83" src="sounds/d1.wav"></audio>
+	<audio data-key="69" src="sounds/d1s.wav"></audio>
+	<audio data-key="68" src="sounds/e1.wav"></audio>
+	<audio data-key="70" src="sounds/f1.wav"></audio>
+	<audio data-key="84" src="sounds/f1s.wav"></audio>
+	<audio data-key="71" src="sounds/g1.wav"></audio>
+	<audio data-key="89" src="sounds/g1s.wav"></audio>
+	<audio data-key="72" src="sounds/a1.wav"></audio>
+	<audio data-key="85" src="sounds/a1s.wav"></audio>
+	<audio data-key="74" src="sounds/b1.wav"></audio>
+
+	<audio data-key="x" src="sounds/kick.wav"></audio>
+
+</body>
+</html>

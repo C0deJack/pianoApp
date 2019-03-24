@@ -1,0 +1,84 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Futura", Futura, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+}
+
+section {
+	height: 600px;
+}
+
+.keys {
+	position: relative;
+	width: 95%;
+	top: 40%;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.key {
+	position: relative;
+	width: 14.28%;
+	height: 300px;
+	float: left;
+	background-color: #f2f2f2;
+	border: 1px solid #5b5b5b;
+	border-radius: 0 0 5% 5%;
+	color: #6e6e6e;
+	font-size: 1.1rem;
+	transition: all 0.1s ease;
+}
+
+.black {
+	z-index: 2;
+	position: absolute;
+	left: 75%;
+	width: 50%;
+	height: 70%;
+	background-color: black;
+}
+
+.sound {
+	position: relative;
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	top: 5%;
+}
+
+.note {
+	position: relative;
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	top: 68%;
+	font-size: 1.8rem;
+}
+
+.playing {
+	background-color: #7aff8d;
+}
+
+.fail {
+	background-color: #ff5565;
+}
+
+.targetNoteHolder {
+	position: relative;
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#targetNote {
+	font-size: 6rem;
+	position: absolute;
+}
+
+/*.key > * {*/
+	/*pointer-events: none;*/
+/*}*/
