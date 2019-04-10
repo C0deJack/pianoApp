@@ -1,4 +1,3 @@
-
 var settings = {
 	clean: true,
 	scripts: true,
@@ -40,7 +39,7 @@ var rename = require('gulp-rename');
 var package = require('./package.json');
 
 // Scripts
-// var jshint = require('gulp-jshint');
+const eslint = require('gulp-eslint');
 var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var uglify = require('gulp-terser');
@@ -119,16 +118,16 @@ var buildScripts = function (done) {
 	done();
 };
 
-// Lint scripts
-// var lintScripts = function (done) {
+var lintScripts = function (done) {
 
-// 	if (!settings.scripts) return done();
+	if (!settings.scripts) return done();
 
-// 	src(paths.scripts.input)
-// 		.pipe(jshint())
-// 		.pipe(jshint.reporter('jshint-stylish'));
-// 	done();
-// };
+	src([paths.scripts.input,'!node_modules/**'])
+		.pipe(eslint({configFile: '.eslintrc.json'}))
+		.pipe(eslint.format())
+		.pipe(eslint.failAfterError());
+	done();
+};
 
 // Process, lint, and minify Sass files
 var buildStyles = function (done) {
@@ -198,7 +197,7 @@ exports.default = series(
 	cleanDist,
 	parallel(
 		buildScripts,
-		// lintScripts,
+		lintScripts,
 		buildStyles,
 		copyFiles
 	)
