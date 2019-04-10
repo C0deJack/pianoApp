@@ -30,7 +30,7 @@ section {
 	background-color: $color-background;
 	border: 1px solid $color-boarders;
 	border-radius: 0 0 5% 5%;
-	color: $color-text;
+	color: $color-text-light;
 	font-size: 1.1rem;
 	transition: all 0.1s ease;
 }
@@ -62,8 +62,7 @@ section {
 }
 
 .playing {
-	// background-color: $color-success;
-	background-color: $color-fail;
+	background-color: $color-success;
 }
 
 .fail {
@@ -71,6 +70,7 @@ section {
 }
 
 .targetNoteHolder {
+	color: $color-text-dark;
 	position: relative;
 	width: 200px;
 	text-align: center;
