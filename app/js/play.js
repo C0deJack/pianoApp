@@ -1,37 +1,12 @@
-// import notes from './notes';
-
-// console.log(notes[55].key + notes[55].key);
-
 window.onload = randomNoteGenerator();
 
 document.addEventListener('keydown', whichKey);
-
-// const keysArray= document.querySelectorAll(`.key`);
-
-// keysArray.forEach(key  => key.addEventListener('click', function (e) {
-// 	let element = e.target;
-// 	let key = element.dataset.key;
-// 	let audio = document.querySelector(`audio[data-key='${key}']`);
-// 	let displayedRandomNote = document.getElementById('targetNote').dataset.key;
-// 	compareNoteIsCorrect(displayedRandomNote, key, audio, element);
-// }));
-
-// ====== bubble fix =====
-// document.addEventListener('click', function (event) {
-// 	if ( event.target.classList.contains( 'accordion-link' ) ) {
-// 		// Do something...
-// 	}
-// }, false)
 
 document.addEventListener('click', function (e) {
 	let element = e.target;
 	let key = element.dataset.key;
 	let audio = document.querySelector(`audio[data-key='${key}']`);
 	let displayedRandomNote = document.getElementById('targetNote').dataset.key;
-
-	// var str = "The best things in life are free";
-	// var patt = new RegExp("e");
-	// var res = patt.test(str)
 
 	if ( e.target.classList.contains( 'key' ) ) {
 		compareNoteIsCorrect(displayedRandomNote, key, audio, element);
