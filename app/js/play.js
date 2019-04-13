@@ -6,16 +6,37 @@ window.onload = randomNoteGenerator();
 
 document.addEventListener('keydown', whichKey);
 
-const keysArray= document.querySelectorAll(`.key`);
+// const keysArray= document.querySelectorAll(`.key`);
 
-keysArray.forEach(key  => key.addEventListener('click', function (e) {
+// keysArray.forEach(key  => key.addEventListener('click', function (e) {
+// 	let element = e.target;
+// 	let key = element.dataset.key;
+// 	let audio = document.querySelector(`audio[data-key='${key}']`);
+// 	let displayedRandomNote = document.getElementById('targetNote').dataset.key;
+// 	compareNoteIsCorrect(displayedRandomNote, key, audio, element);
+// }));
+
+// ====== bubble fix =====
+// document.addEventListener('click', function (event) {
+// 	if ( event.target.classList.contains( 'accordion-link' ) ) {
+// 		// Do something...
+// 	}
+// }, false)
+
+document.addEventListener('click', function (e) {
 	let element = e.target;
 	let key = element.dataset.key;
 	let audio = document.querySelector(`audio[data-key='${key}']`);
 	let displayedRandomNote = document.getElementById('targetNote').dataset.key;
-	compareNoteIsCorrect(displayedRandomNote, key, audio, element);
-})
-);
+
+	// var str = "The best things in life are free";
+	// var patt = new RegExp("e");
+	// var res = patt.test(str)
+
+	if ( e.target.classList.contains( 'key' ) ) {
+		compareNoteIsCorrect(displayedRandomNote, key, audio, element);
+	}
+}, false);
 
 function whichKey(e) {
 	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -67,3 +88,29 @@ function compareNoteIsCorrect(randomNote, pressedNote, audio, key) {
 		key.classList.add('fail');
 	}
 }
+
+document.getElementById('checkbox2').addEventListener ('click', function (e) {
+	const notes = [...(document.getElementsByClassName('note'))];
+	if(e.target.checked) {
+		notes.forEach(i => {
+			i.classList.add('hidden');
+		});
+	} else {
+		notes.forEach(i => {
+			i.classList.remove('hidden');
+		});
+	}
+});
+
+document.getElementById('checkbox1').addEventListener ('click', function (e) {
+	const letters = [...(document.getElementsByClassName('sound'))];
+	if(e.target.checked) {
+		letters.forEach(i => {
+			i.classList.add('hidden');
+		});
+	} else {
+		letters.forEach(i => {
+			i.classList.remove('hidden');
+		});
+	}
+});
