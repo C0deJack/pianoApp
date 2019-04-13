@@ -5,6 +5,7 @@
     },
     "extends": "eslint:recommended",
     "rules": {
+		"no-console": "off",
         "indent": [
             1,
             "tab",
