@@ -11,8 +11,12 @@ export default function randomNoteGenerator(noteRangeBottom = 38, noteRangeTop =
 		var randomKeyObj = randomKeyFnc();
 	}
 
-	document.getElementById('targetNote').innerHTML= randomKeyObj.key;
-	document.getElementById('targetNote').dataset.key = randomKeyObj.asc;
+	if (randomKeyObj.key.length > 1) {
+		var sharpOrFlatNote = randomKeyObj.key[Math.round(Math.random())];
+	} else if (randomKeyObj.key.length === 1) {
+		var sharpOrFlatNote = randomKeyObj.key;
+	}
 
-	return [randomKeyObj.key, randomKeyObj.asc];
+	document.getElementById('targetNote').innerHTML = sharpOrFlatNote;
+	document.getElementById('targetNote').dataset.key = randomKeyObj.asc;
 }
