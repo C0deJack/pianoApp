@@ -1,0 +1,39 @@
+@import './colors.scss';
+
+.modal {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: 10;
+	background-color: rgba($color: $color-black, $alpha: 0.8);
+
+	&__box {
+		top: 40%;
+		width: 50%;
+		height: 20%;
+		margin: 0 auto;
+		background-color: $color-white;
+		position: relative;
+		z-index: 11;
+		border-radius: 10px;
+	}
+
+	&__button {
+		position: relative;
+		top: 40%;
+		width: 100px;
+		height: 30px;
+		margin: 0 auto;
+		background-color: $color-fail;
+		border-radius: 5px;
+		border: none;
+		padding: 10;
+		font-style: inherit;
+		cursor: pointer;
+		outline: inherit;
+
+		&:hover {
+			background-color: $color-mint-green;
+		}
+	}
+}

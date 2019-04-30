@@ -12,12 +12,12 @@ This is web based game to teach students to read music.
 
 ## Tech
 The following tech/langues/systems have been used at some point throughout this project:
-	Javascript
-	Sass
-	ESLint
-	Gulp
-	ES6
-	Webpack
+- Javascript
+- Sass
+- ESLint
+- Gulp
+- ES6
+- Webpack
 
 ## Notes 
 This is a personal project to teach myself various technologies, hence the introduction a removal of various tech. Any suggestions are very welcome! Please raise a pull request. 
