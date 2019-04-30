@@ -1,16 +1,18 @@
-export default function randomNoteGenerator() {
-	const possibleNotesArray = [
-		['a', '72'], ['a#', '85'], ['b', '74'], ['c', '65'], ['c#', '87'],
-		['d', '83'], ['d#', '69'], ['e', '68'], ['f', '70'], ['f#', '84'],
-		['g', '71'], ['g#', '89']
-	];
-	let randomNote = possibleNotesArray[Math.floor(Math.random() * possibleNotesArray.length)];
+import { notes } from './notes';
+
+export default function randomNoteGenerator(noteRangeBottom = 38, noteRangeTop = 49) {
+	var randomKeyFnc = () => notes[Math.floor(((noteRangeTop - noteRangeBottom) * Math.random()) + noteRangeBottom)];
+	
+	var randomKeyObj = randomKeyFnc();
+
 	let lastRandomNote = document.getElementById('targetNote').dataset.key;
-	if (lastRandomNote == randomNote) {
-		let randomNote = possibleNotesArray[Math.floor(Math.random() * possibleNotesArray.length)];
-		return randomNote;
+
+	if (lastRandomNote === randomKeyObj.asc) {
+		var randomKeyObj = randomKeyFnc();
 	}
-	document.getElementById('targetNote').innerHTML= randomNote[0];
-	document.getElementById('targetNote').dataset.key = randomNote[1];
-	return randomNote;
+
+	document.getElementById('targetNote').innerHTML= randomKeyObj.key;
+	document.getElementById('targetNote').dataset.key = randomKeyObj.asc;
+
+	return [randomKeyObj.key, randomKeyObj.asc];
 }
