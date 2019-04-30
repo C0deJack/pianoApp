@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 * {
 	box-sizing: border-box;
 }
@@ -25,10 +27,10 @@ section {
 	width: 14.28%;
 	height: 300px;
 	float: left;
-	background-color: #f2f2f2;
-	border: 1px solid #5b5b5b;
+	background-color: $color-background;
+	border: 1px solid $color-boarders;
 	border-radius: 0 0 5% 5%;
-	color: #6e6e6e;
+	color: $color-text-light;
 	font-size: 1.1rem;
 	transition: all 0.1s ease;
 }
@@ -39,7 +41,7 @@ section {
 	left: 75%;
 	width: 50%;
 	height: 70%;
-	background-color: black;
+	background-color: $color-black;
 }
 
 .sound {
@@ -60,14 +62,15 @@ section {
 }
 
 .playing {
-	background-color: #7aff8d;
+	background-color: $color-success;
 }
 
 .fail {
-	background-color: #ff5565;
+	background-color: $color-fail;
 }
 
 .targetNoteHolder {
+	color: $color-text-dark;
 	position: relative;
 	width: 200px;
 	text-align: center;
@@ -77,6 +80,10 @@ section {
 #targetNote {
 	font-size: 6rem;
 	position: absolute;
+}
+
+.hidden {
+	display: none;
 }
 
 /*.key > * {*/
