@@ -7,15 +7,17 @@ $color-dove-grey: #6E6E6E;
 $color-scorpion: #5B5B5B;
 
 // ROYGBIV
-$color-wild-watermelon: #FF5565;
-$color-mint-green: #7AFF8D; 
+$color-burnt-sienna: #EE6C4D;
+$color-apricot: #E99681;
+$color-ebony-clay: #293241;
+$color-royal-blue: #5386E4;
 
 //===== Assignments =====
-$color-text-light: $color-dove-grey;
-$color-text-dark: $color-black;
-$color-success: $color-mint-green;
-$color-fail: $color-wild-watermelon;
+$color-text-light: $color-scorpion;
+$color-text-dark: $color-ebony-clay;
+$color-success: $color-royal-blue;
+$color-fail: $color-burnt-sienna;
 $color-background: $color-concrete;
 $color-boarders: $color-scorpion;
-
-
+$color-action: $color-burnt-sienna;
+$color-selected: $color-apricot;

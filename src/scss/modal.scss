@@ -15,7 +15,6 @@
 		background-color: $color-white;
 		position: relative;
 		z-index: 11;
-		border-radius: 10px;
 	}
 
 	&__button {
@@ -24,16 +23,16 @@
 		width: 100px;
 		height: 30px;
 		margin: 0 auto;
-		background-color: $color-fail;
-		border-radius: 5px;
+		background-color: $color-action;
 		border: none;
 		padding: 10;
 		font-style: inherit;
+		font-size: 2rem;
 		cursor: pointer;
 		outline: inherit;
 
 		&:hover {
-			background-color: $color-mint-green;
+			background-color: $color-selected;
 		}
 	}
 }
