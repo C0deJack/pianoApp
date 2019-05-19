@@ -2,10 +2,6 @@ import randomNoteGenerator from './libs/randomNoteGenerator';
 
 function play() {
 
-	document.querySelector('.modal__button').addEventListener('click', function(){
-		this.parentNode.parentNode.classList.add('hidden');
-	});
-
 	document.addEventListener('keydown', whichKey);
 
 	document.addEventListener('click', function (e) {
