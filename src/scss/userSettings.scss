@@ -1,0 +1,62 @@
+@import './colors.scss';
+@import './svg.scss';
+
+.user-settings {
+	z-index: 5;
+	position: absolute;
+
+	&__menu {
+		float: left;
+		width: 200px;
+		height: 100vh;
+		margin-left: -200px;
+		padding: 20px;
+		background-color: $color-success;
+		-webkit-transition: all 200ms ease-in-out;
+		transition: all 200ms ease-in-out;
+
+		h2 {
+			text-align: center;
+		}
+
+		ul {
+			margin: 0;
+			padding: 10px;
+			list-style-type: none;
+		}
+	}
+
+	&__icon {
+		background: $svg-cog no-repeat left 8px top 8px;
+		z-index: 6;
+		float: left;
+		width: 50px;
+		height: 50px;
+
+		&:hover {
+			background-color: $color-action;
+		}
+	}
+}
+
+.open {
+	.user-settings {
+		&__menu {
+			margin-left: 0;
+			-webkit-transition: all 200ms ease-in-out;
+			transition: all 200ms ease-in-out;
+		}
+
+		&__icon {
+			background-color: $color-success;
+
+			&:hover {
+				background-color: $color-action;
+			}
+		}
+
+		&__overlay {
+			visibility: visible;
+		}
+	}
+}
