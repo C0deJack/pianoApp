@@ -1,6 +1,6 @@
-import randomNoteGenerator from './libs/randomNoteGenerator';
+import randomNotesArray from './libs/randomNotesArray';
 
-function play() {
+function play(numberOfNotesGameLength) {
 
 	document.addEventListener('keydown', whichKey);
 
@@ -34,15 +34,34 @@ function play() {
 		this.classList.remove('playing','fail');
 	}
 
+	const randomNotesArrayObj = randomNotesArray(numberOfNotesGameLength);
+
+	document.getElementById('targetNote').innerHTML = randomNotesArrayObj[0].key[0];
+	document.getElementById('targetNote').dataset.key = randomNotesArrayObj[0].asc;
+
+	let currentNoteIndex = 0;
+
+	function displayNextNote() {
+
+		currentNoteIndex++;
+
+		document.getElementById('targetNote').innerHTML = randomNotesArrayObj[currentNoteIndex].key[0];
+		document.getElementById('targetNote').dataset.key = randomNotesArrayObj[currentNoteIndex].asc;
+
+		if (currentNoteIndex < numberOfNotesGameLength) {
+
+		}
+	}
+
 	const keys = document.querySelectorAll('.key');
 	keys.forEach(key => key.addEventListener('transitionend', removeClassOnTransitionEnd));
 
-	function compareNoteIsCorrect(randomNote, pressedNote, audio, key) {
+	function compareNoteIsCorrect(displayedNote, pressedNote, audio, key) {
 		let audioFail = document.querySelector(`audio[data-key='x']`);
-		if(randomNote == pressedNote) {
+		if(displayedNote == pressedNote) {
 			playSound(audio);
 			key.classList.add('playing');
-			randomNoteGenerator();
+			displayNextNote();
 		} else {
 			playSound(audioFail);
 			key.classList.add('fail');
