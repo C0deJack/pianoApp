@@ -6,12 +6,10 @@ import './scss/main.scss'
 
 document.querySelector('.modal__button').addEventListener('click', function(){
 	const e = document.querySelector('.modal__box-select')
-	const numberOfNotesGameLength = e.options[e.selectedIndex].value;;
-	console.log(numberOfNotesGameLength);
+	const gameLength = e.options[e.selectedIndex].value;;
 
-	play(numberOfNotesGameLength);
+	play(gameLength);
 	userSettings();
-	timer(30);
+	timer();
 	this.parentNode.parentNode.classList.add('hidden');
 });
-

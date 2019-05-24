@@ -1,6 +1,7 @@
 import randomNotesArray from './libs/randomNotesArray';
+import { stopTimer } from './timer';
 
-function play(numberOfNotesGameLength) {
+function play(gameLength) {
 
 	document.addEventListener('keydown', whichKey);
 
@@ -34,7 +35,7 @@ function play(numberOfNotesGameLength) {
 		this.classList.remove('playing','fail');
 	}
 
-	const randomNotesArrayObj = randomNotesArray(numberOfNotesGameLength);
+	const randomNotesArrayObj = randomNotesArray(gameLength);
 
 	document.getElementById('targetNote').innerHTML = randomNotesArrayObj[0].key[0];
 	document.getElementById('targetNote').dataset.key = randomNotesArrayObj[0].asc;
@@ -45,12 +46,13 @@ function play(numberOfNotesGameLength) {
 
 		currentNoteIndex++;
 
+		if (currentNoteIndex == gameLength) {
+			alert(`Good effort! You completed ${gameLength} notes in ${stopTimer()}s`);
+			return;
+		}
+
 		document.getElementById('targetNote').innerHTML = randomNotesArrayObj[currentNoteIndex].key[0];
 		document.getElementById('targetNote').dataset.key = randomNotesArrayObj[currentNoteIndex].asc;
-
-		if (currentNoteIndex < numberOfNotesGameLength) {
-
-		}
 	}
 
 	const keys = document.querySelectorAll('.key');
