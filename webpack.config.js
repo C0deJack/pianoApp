@@ -17,6 +17,15 @@ module.exports = {
 				]
 			},
 			{
+				test: /\.(t|j)sx?$/,
+				exclude: /node_modules/,
+				use: [
+					{ 
+						loader: 'ts-loader' 
+					}
+				]
+			},
+			{
 				test: /\.html$/,
 				use: [
 					{
@@ -47,5 +56,8 @@ module.exports = {
 		new CopyWebpackPlugin([
 			{ from: 'src/sounds', to: 'sounds'  }
 		])
-	]
+	],
+	resolve: {
+		extensions: ['.ts', '.js']
+	}
 }
