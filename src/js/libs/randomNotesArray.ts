@@ -1,6 +1,6 @@
-import { notes } from './notes';
+var notes = require('./notes.json')
 
-function randomNumbersArray(sizeOfArray, upperLimit, lowerLimit) {
+function randomNumbersArray(sizeOfArray:number, upperLimit:number, lowerLimit:number):Array<number> {
 
 	function randomNumber() {
 		return Math.round((Math.random() * (upperLimit-lowerLimit)) + lowerLimit);
@@ -26,12 +26,12 @@ function randomNumbersArray(sizeOfArray, upperLimit, lowerLimit) {
 	return arr;
 }
 
-export default function randomNotesArray(arrayLength, noteRangeTop = 49, noteRangeBottom = 38) {
+export default function randomNotesArray(arrayLength:number, noteRangeTop:number = 49, noteRangeBottom:number = 38):object[] {
 
 	const randomNumbers = randomNumbersArray(arrayLength, noteRangeTop, noteRangeBottom);
-	let randomNotesArray = [];
+	let randomNotesArray:Array<any> = [];
 
-	randomNumbers.map(number => {
+	randomNumbers.map((number:number) => {
 		let note = notes[number];
 
 		// Some notes can be a sharp or flat. This randomly picks just one.
