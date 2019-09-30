@@ -1,10 +1,10 @@
+import { RandomNotes } from '../../types';
+
 var notes = require('./notes.json')
 
-function randomNumbersArray(sizeOfArray:number, upperLimit:number, lowerLimit:number):Array<number> {
+const randomNumbersArray = (sizeOfArray:number, upperLimit:number, lowerLimit:number):Array<number> => {
 
-	function randomNumber() {
-		return Math.round((Math.random() * (upperLimit-lowerLimit)) + lowerLimit);
-	}
+	const randomNumber = () => Math.round((Math.random() * (upperLimit-lowerLimit)) + lowerLimit);
 
 	var arr =[];
 	arr.push(randomNumber());
@@ -26,10 +26,10 @@ function randomNumbersArray(sizeOfArray:number, upperLimit:number, lowerLimit:nu
 	return arr;
 }
 
-export default function randomNotesArray(arrayLength:number, noteRangeTop:number = 49, noteRangeBottom:number = 38):object[] {
+const randomNotesArray = (arrayLength:number, noteRangeTop:number = 49, noteRangeBottom:number = 38):RandomNotes => {
 
 	const randomNumbers = randomNumbersArray(arrayLength, noteRangeTop, noteRangeBottom);
-	let randomNotesArray:Array<any> = [];
+	let randomNotesArray:RandomNotes = [];
 
 	randomNumbers.map((number:number) => {
 		let note = notes[number];
@@ -43,3 +43,5 @@ export default function randomNotesArray(arrayLength:number, noteRangeTop:number
 	})
 	return randomNotesArray;
 }
+
+export default randomNotesArray;
