@@ -1,6 +1,5 @@
 import { play } from './js/play';
 import { userSettings } from './js/userSettings';
-import timer from './js/timer';
 
 import './scss/main.scss'
 
@@ -10,6 +9,5 @@ document.querySelector('.modal__button').addEventListener('click', function(){
 
 	play(gameLength);
 	userSettings();
-	timer();
 	this.parentNode.parentNode.classList.add('hidden');
 });
