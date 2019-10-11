@@ -6,7 +6,7 @@ function play(numberOfNotesGameLength) {
 
 	const gameTimer = new Timer(document.querySelector('.timer_display'));
 
-	gameTimer.startCountUp();
+	gameTimer.start();
 
 	document.addEventListener('keydown', whichKey);
 
