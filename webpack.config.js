@@ -54,9 +54,10 @@ module.exports = {
 			filename: '[name].css',
 			chunkFilename: '[id].css'
 		}),
-		new CopyWebpackPlugin([
+		new CopyWebpackPlugin({
+			patterns: [
 			{ from: 'src/sounds', to: 'sounds'  }
-		])
+		]})
 	],
 	resolve: {
 		extensions: ['.ts', '.js']
