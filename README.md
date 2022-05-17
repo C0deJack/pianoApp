@@ -19,6 +19,5 @@ The following tech/languages/systems have been used at some point throughout thi
 - ES6
 - Webpack
 
-
 ## Notes 
 This is a personal project to teach myself various technologies, hence the introduction a removal of various tech. Any suggestions are very welcome! Please raise a pull request. 
