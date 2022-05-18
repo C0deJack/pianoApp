@@ -1,7 +1,5 @@
 # Welcome to my Piano Sheet Music App!
-
 The repository can be found [here](https://github.com/C0deJack/pianoApp)
-
 ## Contents
 - [Intro](#Intro)
 - [Tech](#Tech)
